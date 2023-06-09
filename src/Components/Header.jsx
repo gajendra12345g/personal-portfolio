@@ -1,26 +1,41 @@
-import React,{useState} from 'react'
-import { AppBar, Tab, Tabs, Toolbar, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React, { useState, memo } from "react";
+import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
+import { getActiveTabIndex } from "../Helpers/utils";
 
-function Header() {
-  const[value, setValue]= useState();
+const Header = ({ brandName, tabData }) => {
+  const location = useLocation();
+  const pathname = location?.pathname;
+
+  let defaultActiveTab = getActiveTabIndex(tabData, pathname);
+  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+
   return (
-   <React.Fragment>
-    <AppBar sx={{background: '#818380'}}>
+    <AppBar sx={{ background: "#206604" }}>
       <Toolbar>
-      <Typography>
-        PORTFOLIO
-      </Typography>
-      <Tabs sx={{marginLeft: 'auto'}} textColor='inherit' value={value} onChange={(e, value)=> setValue(value)}indicatorColor='success'>
-      <Tab label="HERO" component={Link} to="/hero" />
-      <Tab label="About" component={Link} to="/about" />
-      <Tab label="Service" component={Link} to="/services" />
-      <Tab label="Contact" component={Link} to="/contact" />
-      </Tabs>
-      </Toolbar>  
+        <Typography variant="h5">{brandName}</Typography>
+        <Tabs
+          sx={{ marginLeft: "auto" }}
+          value={activeTab}
+          onChange={(e, tabIndex) => setActiveTab(tabIndex)}
+        >
+          {tabData &&
+            tabData.map((tab) => {
+              return (
+                <Tab
+                  key={`tab_${tab.id}`}
+                  label={tab?.label}
+                  component={Link}
+                  to={tab?.path}
+                  sx={tab.isActive ? { color: "#F5FAF3" } : { display: "none" }}
+                />
+              );
+            })}
+        </Tabs>
+      </Toolbar>
     </AppBar>
-   </React.Fragment>
-  )
-}
+  );
+};
 
-export default Header
+export default  memo(Header);
+
