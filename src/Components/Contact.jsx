@@ -37,9 +37,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post('http://localhost:3031/contact', formData);
-
       console.log('Response:', response.data);
-
       if (response.status === 200) {
         console.log('Message sent successfully');
         // Clear the form fields
@@ -57,7 +55,7 @@ const Contact = () => {
 
   return (
     <>
-      <Grid container spacing={2} justifyContent="center" sx={{ paddingTop: '60px' }}>
+      <Grid container spacing={2} justifyContent="center" sx={{ paddingTop: '80px' }}>
         <Grid item xs={12} sm={6} md={4}>
           <Card variant="outlined">
             <CardContent>

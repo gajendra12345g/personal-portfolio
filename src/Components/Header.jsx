@@ -11,7 +11,8 @@ const Header = ({ brandName, tabData }) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
 
   return (
-    <AppBar sx={{ background: "#206604" }}>
+    <AppBar sx={{ background: "transparent" }}>
+
       <Toolbar>
         <Typography variant="h5">{brandName}</Typography>
         <Tabs

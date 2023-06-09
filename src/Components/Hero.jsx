@@ -5,7 +5,7 @@ import axios from 'axios';
 const textStyle = {
   textAlign: 'center',
   paddingTop: '20%',
-  color:"#206604",
+  color:"white",
   fontFamily:" 'Dancing Script', cursive"
 };
 
@@ -32,9 +32,8 @@ function Hero() {
   }, []);
 
   return (
-    <Container fixed>
-      
-      <Box >
+    <Container fixed>  
+      <Box className="backgroundColor">
         <Box sx={textStyle}>
           {heroData.map((hero, index) => {
             return (

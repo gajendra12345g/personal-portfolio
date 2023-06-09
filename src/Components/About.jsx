@@ -34,8 +34,8 @@ export default function About() {
     <>
       <div>
         <div style={{paddingTop:"60px" , display:"flex", justifyContent:"center"}} >
-        <Typography sx={{marginRight:"100px"}}><img src={("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pQdQZZItMNz6HlQSyv7uT4vzLCkmcVg-IlrThqAoNw&s")} alt="Profile" style={profilePhotoStyle} /></Typography>
-        <Typography sx={{color:"#206604",paddingTop:"20px",fontFamily:" 'Dancing Script', cursive"}}>
+        <Typography sx={{marginRight:"100px", marginTop:"20px"}}><img src={("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pQdQZZItMNz6HlQSyv7uT4vzLCkmcVg-IlrThqAoNw&s")} alt="Profile" style={profilePhotoStyle} /></Typography>
+        <Typography sx={{color:"white",paddingTop:"50px",fontFamily:" 'Dancing Script', cursive"}}>
           Hi! My name is Gajendra Singh. I am a Web Developer, <br/>
           and I'm very passionate and dedicated to my work. <br/>
           With 1 years experience as a professional Web developer,<br/>
